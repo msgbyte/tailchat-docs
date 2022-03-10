@@ -1,0 +1,11 @@
+{
+  "name": "tailchat-plugin-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "moonrailgun",
+  "license": "MIT",
+  "private": true,
+  "scripts": {},
+  "devDependencies": {},
+  "dependencies": {}
+}
