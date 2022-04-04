@@ -3,7 +3,8 @@
   "author": "moonrailgun",
   "private": true,
   "scripts": {
-    "dev": "ts-node ./runner"
+    "dev": "ts-node ./runner",
+    "postinstall": "git submodule init && git submodule update"
   },
   "dependencies": {
     "tailchat-server-sdk": "^0.0.3"
