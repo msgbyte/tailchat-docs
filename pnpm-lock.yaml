@@ -2,12 +2,12 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/node': ^17.0.21
-  tailchat-server-sdk: ^0.0.5
+  tailchat-server-sdk: ^0.0.9
   ts-node: ^10.7.0
   typescript: ^4.6.2
 
 dependencies:
-  tailchat-server-sdk: 0.0.5
+  tailchat-server-sdk: 0.0.9
 
 devDependencies:
   '@types/node': 17.0.21
@@ -324,6 +324,11 @@ packages:
       cli-color: 0.3.2
     dev: false
 
+  /cluster-key-slot/1.1.0:
+    resolution: {integrity: sha512-2Nii8p3RwAPiFwsnZvukotvow2rIHM+yQ6ZcBXGHdniadkYGZYiGmkHJIbZPIV9nfv7m/U1IPMVVcAhoWFeklw==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
     dependencies:
@@ -394,6 +399,11 @@ packages:
     resolution: {integrity: sha512-s82itHOnYrN0Ib8r+z7laQz3sdE+4FP3d9Q7VLO7U+KRT+CR0GsWuyHxzdAY82I7cXv0G/twrqomTJLOssO5HA==}
     dependencies:
       clone: 1.0.4
+    dev: false
+
+  /denque/1.5.1:
+    resolution: {integrity: sha512-XwE+iZ4D6ZUB7mfYRMb5wByE8L74HCn30FBN7sWnXksWc1LO1bPDl67pBR9o/kC4z/xSNAwkMYcGgqDV3BE3Hw==}
+    engines: {node: '>=0.10'}
     dev: false
 
   /denque/2.0.1:
@@ -613,6 +623,25 @@ packages:
       through: 2.3.8
     dev: false
 
+  /ioredis/4.28.5:
+    resolution: {integrity: sha512-3GYo0GJtLqgNXj4YhrisLaNNvWSNwSS2wS4OELGfGxH8I69+XfNdnmV1AyN+ZqMh0i7eX+SWjrwFKDBDgfBC1A==}
+    engines: {node: '>=6'}
+    dependencies:
+      cluster-key-slot: 1.1.0
+      debug: 4.3.3
+      denque: 1.5.1
+      lodash.defaults: 4.2.0
+      lodash.flatten: 4.4.0
+      lodash.isarguments: 3.1.0
+      p-map: 2.1.0
+      redis-commands: 1.7.0
+      redis-errors: 1.2.0
+      redis-parser: 3.0.0
+      standard-as-callback: 2.1.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /ip/1.1.5:
     resolution: {integrity: sha512-rBtCAQAJm8A110nbwn6YdveUnuZH3WrC36IwkRXxDnq53JvXA2NVQvB7IHyKomxK1MJ4VDNw3UtFDdXQ+AvLYA==}
     dev: false
@@ -679,6 +708,18 @@ packages:
     resolution: {integrity: sha512-14/H1aX7hzBBmmh7sGPd+AOMkkIrHM3Z1PAyGgZigA1H1p5O5ANnMyWzvpAETtG68/dC4pC0ncy3+PPGzXZHPg==}
     dependencies:
       lie: 3.1.1
+    dev: false
+
+  /lodash.defaults/4.2.0:
+    resolution: {integrity: sha512-qjxPLHd3r5DnsdGacqOMU6pb/avJzdh9tFX2ymgoZE27BmjXrNy/y4LoaiTeAb+O3gL8AfpJGtqfX/ae2leYYQ==}
+    dev: false
+
+  /lodash.flatten/4.4.0:
+    resolution: {integrity: sha512-C5N2Z3DgnnKr0LOpv/hKCgKdb7ZZwafIrsesve6lmzvZIRZRGaZ/l6Q8+2W7NaT+ZwO3fFlSCzCzrDCFdJfZ4g==}
+    dev: false
+
+  /lodash.isarguments/3.1.0:
+    resolution: {integrity: sha512-chi4NHZlZqZD18a0imDHnZPrDeBbTtVN7GXMwuGdRH9qotxAjYs3aVLKc7zNOG9eddR5Ksd8rvFEBc9SsggPpg==}
     dev: false
 
   /lodash.truncate/4.4.2:
@@ -775,7 +816,7 @@ packages:
       bluebird: 3.7.2
       flat: 5.0.2
       lodash: 4.17.21
-      moleculer: 0.14.19
+      moleculer: 0.14.19_ioredis@4.28.5
     dev: false
 
   /moleculer-repl/0.6.6:
@@ -794,7 +835,7 @@ packages:
       tiny-human-time: 1.2.0
     dev: false
 
-  /moleculer/0.14.19:
+  /moleculer/0.14.19_ioredis@4.28.5:
     resolution: {integrity: sha512-XtZwfYHk2xP6mnTEf2h44OPh/ha0jMqK4bCCROMNRdngBZR2i3LKruZA1SeHUBW+1HtDh2GliAEG7a0rW9VZhg==}
     engines: {node: '>= 10.x.x'}
     hasBin: true
@@ -871,6 +912,7 @@ packages:
       eventemitter2: 6.4.5
       fastest-validator: 1.12.0
       glob: 7.2.0
+      ioredis: 4.28.5
       ipaddr.js: 2.0.1
       kleur: 4.1.4
       lodash: 4.17.21
@@ -1028,6 +1070,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /p-map/2.1.0:
+    resolution: {integrity: sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw==}
+    engines: {node: '>=6'}
+    dev: false
+
   /path-is-absolute/1.0.1:
     resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
     engines: {node: '>=0.10.0'}
@@ -1057,6 +1104,22 @@ packages:
     hasBin: true
     dependencies:
       ttl: 1.3.1
+    dev: false
+
+  /redis-commands/1.7.0:
+    resolution: {integrity: sha512-nJWqw3bTFy21hX/CPKHth6sfhZbdiHP6bTawSgQBlKOVRG7EZkfHbbHwQJnrE4vsQf0CMNE+3gJ4Fmm16vdVlQ==}
+    dev: false
+
+  /redis-errors/1.2.0:
+    resolution: {integrity: sha512-1qny3OExCf0UvUV/5wpYKf2YwPcOqXzkwKKSmKHiE6ZMQs5heeE/c8eXK+PNllPvmjgAbfnsbpkGZWy8cBpn9w==}
+    engines: {node: '>=4'}
+    dev: false
+
+  /redis-parser/3.0.0:
+    resolution: {integrity: sha512-DJnGAeenTdpMEH6uAJRK/uiyEIH9WVsUmoLwzudwGJUwZPp80PDBWPHXSAGNPwNvIXAbe7MSUB1zQFugFml66A==}
+    engines: {node: '>=4'}
+    dependencies:
+      redis-errors: 1.2.0
     dev: false
 
   /reflect-metadata/0.1.13:
@@ -1178,6 +1241,10 @@ packages:
     resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==}
     dev: false
 
+  /standard-as-callback/2.1.0:
+    resolution: {integrity: sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==}
+    dev: false
+
   /string-width/3.1.0:
     resolution: {integrity: sha512-vafcv6KjVZKSgz06oM/H6GDBrAtz8vdhQakGjFIvNrHA6y3HCF1CInLy+QLq8dTJPQ1b+KDUqDFctkdRW44e1w==}
     engines: {node: '>=6'}
@@ -1241,8 +1308,8 @@ packages:
       strip-ansi: 6.0.1
     dev: false
 
-  /tailchat-server-sdk/0.0.5:
-    resolution: {integrity: sha512-kUS+tyMmqUx5PLtHKgMMpQMFyT2Ds5EAdQPgs8iGTnD3yN82KVxrA9V2OJ0CA1dExPFiygMLEXdnxrS98d0JVA==}
+  /tailchat-server-sdk/0.0.9:
+    resolution: {integrity: sha512-Rk7RD+j3qiXgl+eWNpslg4fCRKFd+ncTfChMYNW77J4qFr15JsKV9ipcs9nPKods78/SUQ/See1QJ+daHRr/ag==}
     dependencies:
       '@typegoose/typegoose': 9.7.0_mongoose@6.2.5
       accept-language: 3.0.18
@@ -1251,9 +1318,10 @@ packages:
       fastest-validator: 1.12.0
       i18next: 20.6.1
       i18next-fs-backend: 1.1.4
+      ioredis: 4.28.5
       kleur: 4.1.4
       lodash: 4.17.21
-      moleculer: 0.14.19
+      moleculer: 0.14.19_ioredis@4.28.5
       moleculer-db: 0.8.17_moleculer@0.14.19
       moleculer-repl: 0.6.6
       moment: 2.29.1
@@ -1268,7 +1336,6 @@ packages:
       - debug
       - encoding
       - etcd3
-      - ioredis
       - jaeger-client
       - kafka-node
       - log4js

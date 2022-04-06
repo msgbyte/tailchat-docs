@@ -1,0 +1,9 @@
+{
+  "label": "Tailchat云文档",
+  "name": "com.msgbyte.docs",
+  "url": "{BACKEND}/tc-docs-web/plugins/com.msgbyte.docs/index.js",
+  "version": "0.0.0",
+  "author": "moonrailgun",
+  "description": "为Tailchat提供云端协作文档的能力",
+  "requireRestart": true
+}
