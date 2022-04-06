@@ -7,7 +7,7 @@
     "postinstall": "git submodule init && git submodule update"
   },
   "dependencies": {
-    "tailchat-server-sdk": "^0.0.3"
+    "tailchat-server-sdk": "^0.0.5"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",

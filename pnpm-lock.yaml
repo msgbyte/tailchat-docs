@@ -2,12 +2,12 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/node': ^17.0.21
-  tailchat-server-sdk: ^0.0.3
+  tailchat-server-sdk: ^0.0.5
   ts-node: ^10.7.0
   typescript: ^4.6.2
 
 dependencies:
-  tailchat-server-sdk: 0.0.3
+  tailchat-server-sdk: 0.0.5
 
 devDependencies:
   '@types/node': 17.0.21
@@ -1241,8 +1241,8 @@ packages:
       strip-ansi: 6.0.1
     dev: false
 
-  /tailchat-server-sdk/0.0.3:
-    resolution: {integrity: sha512-fG0X2Er4BPhZujhoBhGLMfgR7U802tfAhzWt5jnOfCUi3jdY5whrz5jvw+iih2HnlcRob1XnGUEwov44e+ykNQ==}
+  /tailchat-server-sdk/0.0.5:
+    resolution: {integrity: sha512-kUS+tyMmqUx5PLtHKgMMpQMFyT2Ds5EAdQPgs8iGTnD3yN82KVxrA9V2OJ0CA1dExPFiygMLEXdnxrS98d0JVA==}
     dependencies:
       '@typegoose/typegoose': 9.7.0_mongoose@6.2.5
       accept-language: 3.0.18

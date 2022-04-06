@@ -1,0 +1,20 @@
+# This Config is just for etherpad service
+
+version: "3.3"
+
+services:
+  tailchat-docs-web:
+    image: nginx
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.tailchat-docs-web.rule=PathPrefix(`/tc-docs-web/`)"
+      - "traefik.http.services.tailchat-docs-web.loadbalancer.server.port=80"
+    volumes:
+      - ./public:/usr/share/nginx/html/tc-docs-web
+    networks:
+      - tailchat
+
+networks:
+  tailchat:
+    external:
+      name: tailchat-internal
