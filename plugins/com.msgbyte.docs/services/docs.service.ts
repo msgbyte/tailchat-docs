@@ -11,7 +11,7 @@ class DocsService extends TcService {
   }
 
   onInit(): void {
-    this.registerLocalDb(require('../models/docs'));
+    this.registerLocalDb(require('../models/docs').default);
 
     this.registerAction('all', this.all);
     this.registerAction('create', this.create);
@@ -36,7 +36,9 @@ class DocsService extends TcService {
       creator: new db.Types.ObjectId(userId),
     });
 
-    return String(doc._id);
+    return {
+      docId: String(doc._id),
+    };
   }
 }
 

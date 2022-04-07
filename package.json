@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "ts-node ./runner.ts",
+    "dev:web": "http-server -p 12010 ./public",
     "postinstall": "git submodule init && git submodule update"
   },
   "dependencies": {
