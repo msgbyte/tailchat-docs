@@ -3,15 +3,17 @@
   "author": "moonrailgun",
   "private": true,
   "scripts": {
-    "dev": "ts-node ./runner.ts",
-    "dev:web": "http-server -p 12010 ./public",
+    "dev": "concurrently --handle-input npm:dev:service npm:dev:web",
+    "dev:service": "ts-node ./runner.ts",
+    "dev:web": "http-server -c-1 -p 12010 ./public",
     "postinstall": "git submodule init && git submodule update"
   },
   "dependencies": {
-    "tailchat-server-sdk": "^0.0.9"
+    "tailchat-server-sdk": "^0.0.10"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
+    "concurrently": "^7.1.0",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.2"
   }
