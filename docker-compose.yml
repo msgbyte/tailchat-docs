@@ -3,24 +3,29 @@
 version: "3.3"
 
 services:
-  tailchat-docs-web:
-    image: nginx
+  # Tailchat 云文档
+  tailchat-docs:
+    build:
+      context: .
+    image: tailchat-docs
+    env_file: docker-compose.env
+    depends_on:
+      - mongo
+      - redis
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.tailchat-docs-web.rule=PathPrefix(`/tc-docs-web/`)"
-      - "traefik.http.services.tailchat-docs-web.loadbalancer.server.port=80"
-    volumes:
-      - ./public:/usr/share/nginx/html/tc-docs-web
+      - "traefik.http.services.tailchat-docs-web.loadbalancer.server.port=22010"
     networks:
       - tailchat
 
-  tailchat-etherpad:
+  tailchat-docs-etherpad:
     build:
       context: ./etherpad-lite
     env_file:
       - "docker-compose.env"
       - ".ep.env"
-    image: tailchat-etherpad
+    image: tailchat-docs-etherpad
     environment:
       DB_TYPE: mongodb
       DB_URL: mongodb://mongo:27017/tailchat_ep

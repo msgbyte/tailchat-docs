@@ -3,10 +3,11 @@
   "author": "moonrailgun",
   "private": true,
   "scripts": {
-    "dev": "concurrently --handle-input npm:dev:service npm:dev:web npm:dev:web:http",
+    "dev": "concurrently --handle-input npm:dev:service npm:dev:web npm:serve:web:http",
     "dev:service": "ts-node ./runner.ts",
     "dev:web": "cd plugins/com.msgbyte.docs && npm run build:web:watch",
-    "dev:web:http": "http-server -c-1 -p 22010 ./public",
+    "serve": "concurrently npm:dev:service npm:serve:web:http",
+    "serve:web:http": "http-server -c-1 -p 22010 ./public",
     "postinstall": "git submodule init && git submodule update"
   },
   "dependencies": {
