@@ -1,6 +1,6 @@
 import React from 'react';
 import { Translate } from '../translate';
-import { useAsyncRequest, showToasts } from '@capital/common';
+import { useAsyncRequest, showToasts, getServiceUrl } from '@capital/common';
 import { Button } from '@capital/component';
 import { request } from '../request';
 import './index.less';
@@ -13,6 +13,7 @@ const ListPanel: React.FC = React.memo(() => {
     // TODO: 打开该id的文档
 
     console.log('docId', docId);
+    window.open(`${getServiceUrl()}/ep/${docId}`);
 
     showToasts(Translate.createSuccess, 'success');
   }, []);

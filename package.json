@@ -3,13 +3,14 @@
   "author": "moonrailgun",
   "private": true,
   "scripts": {
-    "dev": "concurrently --handle-input npm:dev:service npm:dev:web",
+    "dev": "concurrently --handle-input npm:dev:service npm:dev:web npm:dev:web:http",
     "dev:service": "ts-node ./runner.ts",
-    "dev:web": "http-server -c-1 -p 12010 ./public",
+    "dev:web": "cd plugins/com.msgbyte.docs && npm run build:web:watch",
+    "dev:web:http": "http-server -c-1 -p 22010 ./public",
     "postinstall": "git submodule init && git submodule update"
   },
   "dependencies": {
-    "tailchat-server-sdk": "^0.0.10"
+    "tailchat-server-sdk": "latest"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
