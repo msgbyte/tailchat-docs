@@ -1,4 +1,4 @@
 [submodule "etherpad-lite"]
 	path = etherpad-lite
-	url = git@github.com:msgbyte/etherpad-lite.git
+	url = https://github.com/msgbyte/etherpad-lite.git
 	branch = tailchat-develop
