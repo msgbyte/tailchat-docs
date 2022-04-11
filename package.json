@@ -8,7 +8,7 @@
     "dev:web": "cd plugins/com.msgbyte.docs && npm run build:web:watch",
     "serve": "concurrently npm:dev:service npm:serve:web:http",
     "serve:web:http": "http-server -c-1 -p 22010 ./public",
-    "postinstall": "git submodule init && git submodule update"
+    "postinstall": "git submodule update --recursive --init"
   },
   "dependencies": {
     "tailchat-server-sdk": "latest"

@@ -9,9 +9,10 @@ services:
       context: .
     image: tailchat-docs
     env_file: docker-compose.env
-    depends_on:
-      - mongo
-      - redis
+    # TODO: 临时方案
+    external_links:
+      - tailchat-server-cloudbase-nightly_mongo_1:mongo
+      - tailchat-server-cloudbase-nightly_redis_1:redis
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.tailchat-docs-web.rule=PathPrefix(`/tc-docs-web/`)"
@@ -26,6 +27,8 @@ services:
       - "docker-compose.env"
       - ".ep.env"
     image: tailchat-docs-etherpad
+    external_links:
+      - tailchat-server-cloudbase-nightly_mongo_1:mongo
     environment:
       DB_TYPE: mongodb
       DB_URL: mongodb://mongo:27017/tailchat_ep
