@@ -23,10 +23,10 @@ services:
   tailchat-docs-etherpad:
     build:
       context: ./etherpad-lite
+    image: tailchat-docs-etherpad
     env_file:
       - "docker-compose.env"
       - ".ep.env"
-    image: tailchat-docs-etherpad
     external_links:
       - tailchat-server-cloudbase-nightly_mongo_1:mongo
     environment:
