@@ -23,5 +23,8 @@ ENV NODE_ENV=production
 # Install plugins(whitelist)
 RUN cd plugins/com.msgbyte.docs && npm run build:web && cd -
 
+# web static service port
+EXPOSE 22010
+
 # Start server
 CMD ["pnpm", "serve"]
