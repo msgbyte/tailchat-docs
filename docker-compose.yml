@@ -17,6 +17,8 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.tailchat-docs-web.rule=PathPrefix(`/tc-docs-web/`)"
       - "traefik.http.services.tailchat-docs-web.loadbalancer.server.port=22010"
+      - "traefik.http.routers.tailchat-docs-web.middlewares=tailchat-docs-web-prefix"
+      - "traefik.http.middlewares.tailchat-docs-web-prefix.stripprefix.prefixes=/tc-docs-web/"
     networks:
       - tailchat
 
@@ -36,8 +38,8 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.ep.rule=PathPrefix(`/ep/`)"
       - "traefik.http.services.ep.loadbalancer.server.port=9001"
-      - "traefik.http.middlewares.ep-prefix.stripprefix.prefixes=/ep/"
       - "traefik.http.routers.ep.middlewares=ep-prefix"
+      - "traefik.http.middlewares.ep-prefix.stripprefix.prefixes=/ep/"
     networks:
       - tailchat
 
