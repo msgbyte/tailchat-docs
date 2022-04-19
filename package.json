@@ -6,8 +6,9 @@
     "dev": "concurrently --handle-input -k npm:dev:service npm:dev:web npm:serve:web:http",
     "dev:service": "ts-node ./runner.ts",
     "dev:web": "cd plugins/com.msgbyte.docs && npm run build:web:watch",
-    "serve": "concurrently -k npm:dev:service npm:serve:web:http",
+    "serve": "concurrently -k npm:pro:service npm:serve:web:http",
     "serve:web:http": "http-server -c-1 -p 22010 ./public",
+    "pro:service": "NODE_ENV=production ts-node ./runner.ts",
     "postinstall": "git submodule update --recursive --init"
   },
   "dependencies": {
